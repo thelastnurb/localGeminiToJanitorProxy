@@ -30,9 +30,10 @@ func main() {
 	mux := http.NewServeMux()
 
 	// Endpoints
-	mux.HandleFunc("GET /health", handler.HealthHandler)
-	mux.HandleFunc("GET /v1/models", handler.ModelsHandler)
-	mux.HandleFunc("POST /v1/chat/completions", handler.CompletionsHandler)
+	mux.HandleFunc("/health", handler.HealthHandler)
+	mux.HandleFunc("/v1/models", handler.ModelsHandler)
+	mux.HandleFunc("/v1/chat/completions", handler.CompletionsHandler)
+	mux.HandleFunc("/v1", handler.CompletionsHandler)
 
 	// Middlewares: Logger -> CORS -> Auth
 	handler := middleware.Logger(middleware.CORS(middleware.Auth(mux)))
