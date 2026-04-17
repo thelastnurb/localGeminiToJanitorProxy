@@ -23,17 +23,17 @@
    - **Instance Type**: `Free`
 5. Нажмите кнопку **Advanced** и добавьте переменные окружения (**Environment Variables**):
    - `GEMINI_API_KEY`: Ваш ключ, полученный в [Google AI Studio](https://aistudio.google.com/app/apikey).
-   - `PROXY_API_KEY`: Любой придуманный вами пароль (нужен для авторизации в Janitor AI).
+   - `PROXY_API_KEY`: Любой придуманный вами пароль API (нужен для авторизации в Janitor AI).
 6. Нажмите **Create Web Service** и дождитесь надписи "Your service is live".
 
 После завершения вы получите ссылку вида: `https://имя-вашего-сервиса.onrender.com`.
 
 ## ⚙️ Настройка в Janitor AI
 
-1. Откройте **API Settings** и выберите пункт **OpenAI**.
+1. Откройте **API Settings** и выберите пункт **proxy**.
 2. В поле **Reverse Proxy URL (OpenAI Base URL)** вставьте вашу ссылку от Render и добавьте `/v1` в конец.
    *Пример: `https://my-proxy.onrender.com/v1`*
-3. В поле **OpenAI Key** введите ваш секретный пароль, который вы указали в поле `PROXY_API_KEY`.
+3. В поле **OpenAI Key** введите ваш секретный пароль API, который вы указали в поле `PROXY_API_KEY`.
 4. В поле **Model** выберите Custom и впишите: `gemini-flash-latest`(когда вы пишите latest автоматом подгружается последняя версия флешки. Например сейчас это 3.0)  (или другую модель Gemini).
 5. Нажмите Save Settings и начните чат!
 
